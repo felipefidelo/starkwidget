@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Widget Flutuante</title>
+    <style>
+        /* Estilo do widget flutuante */
+        #widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        /* Estilo do conteúdo do widget */
+        #widget-content {
+            display: none;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="widget">
+        <span>Clique aqui</span>
+        <div id="widget-content">
+            <!-- Conteúdo do chat ou FAQ -->
+            <h2>Perguntas frequentes</h2>
+            <p>Seu conteúdo do chat ou FAQ vai aqui.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função para alternar a exibição do conteúdo do widget
+        function toggleWidgetContent() {
+            var widgetContent = document.getElementById("widget-content");
+            if (widgetContent.style.display === "none") {
+                widgetContent.style.display = "block";
+            } else {
+                widgetContent.style.display = "none";
+            }
+        }
+
+        // Adiciona um evento de clique ao widget
+        document.getElementById("widget").addEventListener("click", toggleWidgetContent);
+
+        // Criar os botões
+        var button1 = document.createElement("button");
+        button1.innerHTML = "Botão 1";
+        button1.addEventListener("click", function() {
+            window.location.href = "https://www.example.com"; // Redirecionar para exemplo.com
+        });
+        document.getElementById("widget-content").appendChild(button1);
+
+        var button2 = document.createElement("button");
+        button2.innerHTML = "Botão 2";
+        button2.addEventListener("click", function() {
+            window.location.href = "https://www.google.com"; // Redirecionar para o Google
+        });
+        document.getElementById("widget-content").appendChild(button2);
+
+        var button3 = document.createElement("button");
+        button3.innerHTML = "Botão 3";
+        button3.addEventListener("click", function() {
+            window.location.href = "https://www.openai.com"; // Redirecionar para o site da OpenAI
+        });
+        document.getElementById("widget-content").appendChild(button3);
+    </script>
+</body>
+</html>
